@@ -1,4 +1,5 @@
-name: Aprendiendo GitHub Actions
+name: First GitHub Actions Project
+run-name: Estoy aprendiendo GitHub Action
 
 # 1. Trigger the workflow on pushes or pull requests to main
 on:
