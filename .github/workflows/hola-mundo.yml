@@ -1,0 +1,26 @@
+name: Aprendiendo GitHub Actions
+
+# 1. Trigger the workflow on pushes or pull requests to main
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  hola-mundo:
+    # 2. Specify the virtual machine environment
+    runs-on: ubuntu-latest
+
+    steps:
+      # 3. Check out your repository code so the runner can access it
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 4. Definir variable con usuario de nuestra cuenta.
+      - name: Definir Variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+
+      # 5. Run script
+      - name: Run the script
+        run: python3 hola_mundo.py
